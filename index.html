@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title> To-Do list</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello presido</h1>
+    <div id="wrapper">
+        <h1>To Do List</h1>
+        <form id="task-area">
+            <input type="text" id="addtask" placeholder="Add here">
+            <button type="submit">ADD</button>
+        </form>
+        <ul id="displaytask"></ul>
+    </div>
+    <script>
+        let taskarea = document.getElementById('task-area');
+        let addtasks = document.getElementById('addtask');
+        let visibletask = document.getElementById('displaytask'); 
+function addTask(event) {
+    event.preventDefault(); // to avoid whitespace use this cancel event which will not occur 
+    if (addtasks.value === '') return;
+    const task = createTask(addtasks.value); 
+    visibletask.appendChild(task);
+    addtasks.value = '';
+}
+function createTask(taskName) {
+    const task = document.createElement('li');
+    task.classList.add('task'); //classlist return the css classname of an element
+    task.innerHTML = `
+        <input type="checkbox">
+        <label>${taskName}</label>
+        <span class="delete">×</span>
+    `;
+    const deleteButton = task.querySelector('.delete'); //queryselector return the first element matches css selector
+    deleteButton.addEventListener('click', deleteTask);
+    return task;
+}
+function deleteTask(event) { 
+    event.target.parentElement.remove();  //parentelement return the html element
+}
+taskarea.addEventListener('submit', addTask);
+</script>
 </body>
 </html>
+
