@@ -22,7 +22,7 @@
         let addtasks = document.getElementById('addtask');
         let visibletask = document.getElementById('displaytask'); 
 function addTask(event) {
-    event.preventDefault(); // to avoid whitespace use this cancel event which will not occur 
+    event.preventDefault(); // to avoid whitespace use this , cancel event which will not occur 
     if (addtasks.value === '') return;
     const task = createTask(addtasks.value); 
     visibletask.appendChild(task);
