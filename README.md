@@ -26,25 +26,4 @@ This is a basic To-Do List application built using HTML, CSS, and JavaScript. It
 
 
 
-# To-Do List Application
-
-## Description
-This is a simple and user-friendly To-Do List application built with HTML, CSS, and JavaScript. It allows users to add, edit, delete, and mark tasks as complete, helping them stay organized and manage their daily tasks efficiently.
-
-## Features
-- Add new tasks.
-- Edit existing tasks.
-- Delete tasks.
-- Mark tasks as complete or incomplete.
-- Persistent task storage using local storage (optional feature).
-- Responsive and visually appealing design.
-- Hover effects and smooth interactions.
-
-## Technologies Used
-- **Frontend:** HTML, CSS, JavaScript
-
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/todo-list.git
 
